@@ -1,0 +1,5 @@
+# Dropbox Sync
+
+```
+DROPBOX_APP_ID=xxx DROPBOX_ACCESS_TOKEN=xxx DROPBOX_SECRET=xxx DROPBOX_REMOTE_FOLDER_PATH=/www/ DROPBOX_LOCAL_FOLDER_PATH="`pwd`/www" DROPBOX_SYNC_STATE_FOLDER_PATH="`pwd`/state" node bin/server.js
+```

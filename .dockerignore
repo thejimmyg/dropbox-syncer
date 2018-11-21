@@ -1,0 +1,8 @@
+.DS_Store
+.git
+.gitignore
+.sw[op]
+bin/*.sh
+www
+node_modules
+state

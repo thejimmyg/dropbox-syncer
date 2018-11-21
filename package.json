@@ -1,0 +1,27 @@
+{
+  "name": "dropbox-syncer",
+  "version": "0.1.0",
+  "description": "Respond to a Dropbox webhook call and perform a sync",
+  "scripts": {
+    "docker:build": "docker build . -t docker.jimmyg.org/dropbox-syncer:latest",
+    "docker:push": "docker push docker.jimmyg.org/dropbox-syncer:latest",
+    "docker:run": "docker run -e DROPBOX_APP_ID=xxx -e DROPBOX_ACCESS_TOKEN=xxx -e DROPBOX_SECRET=xxx -e DROPBOX_REMOTE_FOLDER_PATH=/www/ -e DROPBOX_LOCAL_FOLDER_PATH=/app/www -e DROPBOX_SYNC_STATE_FOLDER_PATH=/app/state -e PORT=9001 -v \"`pwd`/state:/app/state`\" -v \"`pwd`/www:/app/www`\" --init -p 9001:9001 dropbox-syncer:latest",
+    "start": "node bin/server.js",
+    "fix": "standard --fix index.js lib/*.js bin/*.js"
+  },
+  "author": "JimmyG",
+  "license": "MIT",
+  "dependencies": {
+    "dropbox": "^4.0.12",
+    "express": "^4.16.4",
+    "isomorphic-fetch": "^2.2.1",
+    "shelljs": "^0.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:thejimmyg/dropbox-syncer.git"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}

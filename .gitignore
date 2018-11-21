@@ -1,0 +1,7 @@
+*.DS_Store
+*.sw[op]
+.env
+bin/*.sh
+node_modules
+state
+www
